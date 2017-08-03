@@ -1,10 +1,13 @@
 {
-  "name": "electron-quick-start",
+  "name": "electron-packager-quick-start",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack-win": "./node_modules/.bin/electron-packager . --asar  --overwrite --platform=win32 --arch=ia32 --prune=true --out=out --version-string.CompanyName='GitHub, Inc.'  --ignore=node_modules",
+    "pack-mac": "./node_modules/.bin/electron-packager . --asar --overwrite --platform=darwin --arch=x64 --prune=true --out=out  --ignore=node_modules",
+    "pack-all": "./node_modules/.bin/electron-packager . --out=dist --prune --asar --overwrite --all"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -17,6 +20,7 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "~1.6.2"
+    "electron": "~1.6.11",
+    "electron-packager": "^8.7.2"
   }
 }
